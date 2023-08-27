@@ -1,4 +1,4 @@
-package controllers;
+package com.example.backendengin.controllers;
 
 import com.example.backendengin.entities.Composant;
 import com.example.backendengin.service.ComposantService;

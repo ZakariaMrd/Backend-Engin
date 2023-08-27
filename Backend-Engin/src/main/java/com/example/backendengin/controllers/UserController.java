@@ -1,4 +1,4 @@
-package controllers;
+package com.example.backendengin.controllers;
 
 import com.example.backendengin.entities.Utilisateur;
 import com.example.backendengin.service.UserService;

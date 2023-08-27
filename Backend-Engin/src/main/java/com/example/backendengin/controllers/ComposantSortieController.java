@@ -1,4 +1,4 @@
-package controllers;
+package com.example.backendengin.controllers;
 
 import com.example.backendengin.entities.Composantsortie;
 import com.example.backendengin.service.ComposantSortieService;
