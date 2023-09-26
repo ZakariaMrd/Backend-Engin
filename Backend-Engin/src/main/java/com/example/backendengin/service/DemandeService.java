@@ -2,7 +2,7 @@ package com.example.backendengin.service;
 
 import com.example.backendengin.dtos.EnginsAffectationDTO;
 import com.example.backendengin.entities.Demande;
-import com.example.backendengin.entities.Utilisateur;
+import com.example.backendengin.entities.User;
 import com.example.backendengin.repositories.DemandeRepo;
 import com.example.backendengin.repositories.Utilisateurrepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +54,7 @@ public class DemandeService {
     }
 
     public List<Demande> getDemandeByUserId(Long id_user) {
-        Utilisateur user = new Utilisateur();
+        User user = new User();
         user.setId_user(id_user);
         return demandeRepository.findByUser(user);
     }

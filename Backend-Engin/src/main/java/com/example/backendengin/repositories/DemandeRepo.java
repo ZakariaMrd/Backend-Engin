@@ -2,7 +2,7 @@ package com.example.backendengin.repositories;
 
 import com.example.backendengin.dtos.EnginsAffectationDTO;
 import com.example.backendengin.entities.Demande;
-import com.example.backendengin.entities.Utilisateur;
+import com.example.backendengin.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 
 public interface DemandeRepo extends JpaRepository<Demande,Long> {
-    List<Demande> findByUser(Utilisateur user);
+    List<Demande> findByUser(User user);
 
     List<Demande> findByIddemande(Long id);
     List<Demande> findByConfirmationIsFalse();

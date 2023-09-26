@@ -1,6 +1,6 @@
 package com.example.backendengin.controllers;
 
-import com.example.backendengin.entities.Utilisateur;
+import com.example.backendengin.entities.User;
 import com.example.backendengin.service.UserService;
 import com.example.backendengin.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public List<Utilisateur> findAllUsers() {
+    public List<User> findAllUsers() {
         return userServiceImpl.findAllUsers();
     }
 
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addNewUser(@RequestBody Utilisateur user) {
+    public ResponseEntity<String> addNewUser(@RequestBody User user) {
         userServiceImpl.AddNewUser(user);
         return ResponseEntity.ok("User added successfully");
     }
