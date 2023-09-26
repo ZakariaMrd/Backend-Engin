@@ -22,8 +22,8 @@ public class Demande {
     private String Shift;
     private String Raison;
     @ManyToOne
-    @JoinColumn(name = "iduser")
-    private Utilisateur user;
+    @JoinColumn(name = "id_user")
+    private User user;
     @OneToMany(mappedBy = "demande",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Detaildemmande> detaildemmandes;
     @OneToMany(mappedBy = "demande",fetch = FetchType.LAZY,cascade = CascadeType.ALL)

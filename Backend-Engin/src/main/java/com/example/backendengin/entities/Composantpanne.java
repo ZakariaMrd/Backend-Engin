@@ -11,8 +11,8 @@ public class Composantpanne implements Serializable {
     @EmbeddedId
     private Composantpannekey id;
     private String remarque;
-
     private boolean repare;
+
     @ManyToOne()
     @MapsId("composantid")
     @JoinColumn(name="composant_id")

@@ -4,7 +4,7 @@ import com.example.backendengin.dtos.request.SignUpRequest;
 import com.example.backendengin.dtos.request.SigninRequest;
 import com.example.backendengin.dtos.response.JwtAuthenticationResponse;
 import com.example.backendengin.entities.Role;
-import com.example.backendengin.entities.Utilisateur;
+import com.example.backendengin.entities.User;
 import com.example.backendengin.repositories.Utilisateurrepo;
 import com.example.backendengin.service.AuthenticationService;
 import com.example.backendengin.service.JwtService;
@@ -23,7 +23,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationManager authenticationManager;
     @Override
     public JwtAuthenticationResponse signup(SignUpRequest request) {
-        var user = Utilisateur.builder().firstName(request.getFirstName()).lastName(request.getLastName())
+        var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
                 .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER).build();
         userRepository.save(user);

@@ -1,6 +1,6 @@
 package com.example.backendengin.service.impl;
 
-import com.example.backendengin.entities.Utilisateur;
+import com.example.backendengin.entities.User;
 import com.example.backendengin.repositories.Utilisateurrepo;
 import com.example.backendengin.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
         };
     }
     @Override
-    public List<Utilisateur> findAllUsers(){
+    public List<User> findAllUsers(){
         return userRepository.findAll();
     }
     @Override
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id_user);
     }
     @Override
-     public void AddNewUser(Utilisateur  user){
+     public void AddNewUser(User user){
         BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
         String password = bcryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(password);
@@ -46,13 +46,13 @@ public class UserServiceImpl implements UserService {
     }
 //    @Override
 //     public void UpdateUserToken(Long id_user, String token){
-//        Utilisateur user=userRepository.findById(id_user).orElseThrow(()->new RuntimeException("User not found  "));
+//        User user=userRepository.findById(id_user).orElseThrow(()->new RuntimeException("User not found  "));
 //        user.setToken(token);
 //        userRepository.save(user);
 //    }
     @Override
      public void UpdateUserPassword(String mdp, Long id_user){
-        Utilisateur user=userRepository.findById(id_user).orElseThrow(()->new RuntimeException("User not found "));
+        User user=userRepository.findById(id_user).orElseThrow(()->new RuntimeException("User not found "));
         user.setPassword(mdp);
         userRepository.save(user);
     }
